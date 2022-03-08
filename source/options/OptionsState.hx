@@ -36,19 +36,19 @@ class OptionsState extends MusicBeatState
 
 	function openSelectedSubstate(label:String) {
 		switch(label) {
-			case 'Note Colors':
+			case 'Color de las Flechas':
 				openSubState(new options.NotesSubState());
-			case 'Controls':
+			case 'Controles (PC)':
 				openSubState(new options.ControlsSubState());
-			case 'Graphics':
+			case 'Graficos':
 				openSubState(new options.GraphicsSettingsSubState());
-			case 'Visuals and UI':
+			case 'Visuales y UI':
 				openSubState(new options.VisualsUISubState());
 			case 'Gameplay':
 				openSubState(new options.GameplaySettingsSubState());
 			case 'Adjust Delay and Combo':
 				LoadingState.loadAndSwitchState(new options.NoteOffsetState());
-			case 'Mobile Controls':
+			case 'Controles (Mobile)':
 				MusicBeatState.switchState(new android.CastomAndroidControls());
 		}
 	}
