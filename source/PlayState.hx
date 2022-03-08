@@ -64,16 +64,16 @@ class PlayState extends MusicBeatState
 	public static var STRUM_X_MIDDLESCROLL = -278;
 
 	public static var ratingStuff:Array<Dynamic> = [
-		['F', 0.2], //From 0% to 19%
-		['E', 0.4], //From 20% to 39%
-		['C', 0.5], //From 40% to 49%
-		['B', 0.6], //From 50% to 59%
-		['B+', 0.69], //From 60% to 68%
-		['Nice', 0.7], //69%
-		['A', 0.8], //From 70% to 79%
-		['A+', 0.9], //From 80% to 89%
-		['S', 1], //From 90% to 99%
-		['S+', 1] //The value on this one isn't used actually, since Perfect is always "1"
+		['Apestas!', 0.2], //From 0% to 19%
+		['Mierda', 0.4], //From 20% to 39%
+		['Mal', 0.5], //From 40% to 49%
+		['Bruh', 0.6], //From 50% to 59%
+		['Meh', 0.69], //From 60% to 68%
+		['Agradable', 0.7], //69%
+		['Bien', 0.8], //From 70% to 79%
+		['Genial', 0.9], //From 80% to 89%
+		['Kpro', 1], //From 90% to 99%
+		['Perfecto!', 1] //The value on this one isn't used actually, since Perfect is always "1"
 	];
 	
 	public var modchartTweens:Map<String, FlxTween> = new Map<String, FlxTween>();
@@ -1091,7 +1091,7 @@ class PlayState extends MusicBeatState
                 if(ClientPrefs.judgements) {add(judgementCounter);}
 
 
-		botplayTxt = new FlxText(400, timeBarBG.y + 55, FlxG.width - 800, "BOTPLAY", 32);
+		botplayTxt = new FlxText(400, timeBarBG.y + 55, FlxG.width - 800, "| BOTPLAY |/nRelajate", 32);
 		botplayTxt.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		botplayTxt.scrollFactor.set();
 		botplayTxt.borderSize = 1.25;
@@ -2273,13 +2273,13 @@ class PlayState extends MusicBeatState
 		super.update(elapsed);
 
 		if(ratingName == '?') {
-			scoreTxt.text = 'Score: ' + songScore + ' // Misses: 0 // Rank: ' + ratingName;
-                        judgementCounter.text = 'Sicks: 0 \nGoods: 0\nBads: 0\nShits: 0\ne';
-			healthCounter.text = 'Health: 50%';
+			scoreTxt.text = 'Puntos: ' + songScore + ' // Fallos: 0 // Calificacion: ' + ratingName;
+                        judgementCounter.text = 'Kpros: 0 \nBuenos: 0\nMalos: 0\nMierdas: 0\ne';
+			healthCounter.text = 'Vida: 50%';
 		} else {
-			scoreTxt.text = 'Score: ' + songScore + ' // Misses: ' + songMisses + ' // Acc: ' + Highscore.floorDecimal(ratingPercent * 100, 2) + '%' + ' // Rank: ' + ratingName + ' (' + ratingFC + ')' ;//peeps wanted no integer rating
-                        judgementCounter.text = 'Sicks: ${sicks}\nGoods: ${goods}\nBads: ${bads}\nShits: ${shits}\nE';
-			healthCounter.text = 'Health: ' + Math.round(health * 50) + '%'  ;
+			scoreTxt.text = 'Puntos: ' + songScore + ' // Fallos: ' + songMisses + ' (' + ratingFC + ')' // Calificacion: ' + ratingName + ' (' + Highscore.floorDecimal(ratingPercent * 100, 2) + '%' + ')' ;//peeps wanted no integer rating
+                        judgementCounter.text = 'Kpros: ${sicks}\nBuenos: ${goods}\nMalos: ${bads}\nMierdas: ${shits}\nE';
+			healthCounter.text = 'Vida: ' + Math.round(health * 50) + '%'  ;
 		}
 
 		if(botplayTxt.visible) {
