@@ -187,7 +187,7 @@ class ModsMenuState extends MusicBeatState
 
 		
 		startX -= 190;
-		buttonDisableAll = new FlxButton(startX, 0, "DISABLE ALL", function() {
+		buttonDisableAll = new FlxButton(startX, 0, "DESACTIVAR TODOS", function() {
 			for (i in modsList){
 				i[1] = false;
 			}
@@ -204,7 +204,7 @@ class ModsMenuState extends MusicBeatState
 		visibleWhenHasMods.push(buttonDisableAll);
 
 		startX -= 190;
-		buttonEnableAll = new FlxButton(startX, 0, "ENABLE ALL", function() {
+		buttonEnableAll = new FlxButton(startX, 0, "ACTIVAR TODOS", function() {
 			for (i in modsList){
 				i[1] = true;
 			}
@@ -227,7 +227,7 @@ class ModsMenuState extends MusicBeatState
 		
 		
 		/*
-		installButton = new FlxButton(startX, 620, "Install Mod", function()
+		installButton = new FlxButton(startX, 620, "Instalar Mod", function()
 		{
 			installMod();
 		});
@@ -240,7 +240,7 @@ class ModsMenuState extends MusicBeatState
 		add(installButton);
 		startX -= 180;
 
-		removeButton = new FlxButton(startX, 620, "Delete Selected Mod", function()
+		removeButton = new FlxButton(startX, 620, "Borrar Mod", function()
 		{
 			var path = haxe.io.Path.join([Paths.mods(), modsList[curSelected][0]]);
 			if(FileSystem.exists(path) && FileSystem.isDirectory(path))
