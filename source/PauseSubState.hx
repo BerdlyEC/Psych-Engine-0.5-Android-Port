@@ -144,20 +144,22 @@ class PauseSubState extends MusicBeatSubstate
 
 			switch (daSelected)
 			{
-				case "Resume":
+				case "Continuar":
 					close();
-				case 'Change Difficulty':
+				case 'Cambiar Dificultad':
 					menuItems = difficultyChoices;
 					regenMenu();
-				case "Chart Editor":
+				case "Editor de Charts":
 				    MusicBeatState.switchState(new editors.ChartingState());
-                                case "Character Editor":
+                                case "Editor de Personajes":
                                     MusicBeatState.switchState(new editors.CharacterEditorState());
-				case "Restart Song":
+				case "Reiniciar Cancion":
 					CustomFadeTransition.nextCamera = transCamera;
 					MusicBeatState.resetState();
 					FlxG.sound.music.volume = 0;
-				case "Exit to menu":
+                                case "Saltar Cancion":
+                                      endSong();
+				case "Salir al Menu":
 					PlayState.deathCounter = 0;
 					PlayState.seenCutscene = false;
 					CustomFadeTransition.nextCamera = transCamera;
@@ -169,7 +171,7 @@ class PauseSubState extends MusicBeatSubstate
 					FlxG.sound.playMusic(Paths.music('freakyMenu'));
 					PlayState.changedDifficulty = false;
 
-				case 'BACK':
+				case 'Volver':
 					menuItems = menuItemsOG;
 					regenMenu();
 			}
