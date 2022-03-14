@@ -2277,7 +2277,7 @@ class PlayState extends MusicBeatState
                         judgementCounter.text = 'Kpros: 0 \nBuenos: 0\nMalos: 0\nMierdas: 0\ne';
 			healthCounter.text = 'Vida: 50%';
 		} else {
-			scoreTxt.text = 'Puntos: ' + songScore + ' // Fallos: ' + songMisses + ' (' + ratingFC + ')' // Calificacion: ' + ratingName + ' (' + Highscore.floorDecimal(ratingPercent * 100, 2) + '%' + ')' ;//peeps wanted no integer rating
+			scoreTxt.text = 'Puntos: ' + songScore + ' // Fallos: ' + songMisses + ' (' + ratingFC + ') // Calificacion: ' + ratingName + ' (' + Highscore.floorDecimal(ratingPercent * 100, 2) + '%' + ')' ;//peeps wanted no integer rating
                         judgementCounter.text = 'Kpros: ${sicks}\nBuenos: ${goods}\nMalos: ${bads}\nMierdas: ${shits}\nE';
 			healthCounter.text = 'Vida: ' + Math.round(health * 50) + '%'  ;
 		}
